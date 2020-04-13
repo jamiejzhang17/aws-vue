@@ -23,6 +23,6 @@ test:
 
 deployment:
   s3up:
-    branch: develop
+    branch: master
     commands:
       - s3deploy -source=dist/ -region=us-east-2 -bucket=jamiejzhang.com
