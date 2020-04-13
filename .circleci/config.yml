@@ -1,13 +1,28 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
-version: 2.1
-# Use a package of configuration called an orb.
-orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.4.1
-# Orchestrate or schedule a set of jobs
-workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
-    jobs:
-      - welcome/run
+machine:
+  environment:
+    CIRCLE_BUILD_DIR: $HOME/$CIRCLE_PROJECT_REPONAME
+    PATH: $PATH:$CIRCLE_BUILD_DIR/bin:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+  post:
+    - mkdir -p $CIRCLE_BUILD_DIR/bin
+  node:
+    version: 8.9.1
+
+dependencies:
+  pre:
+    - go get -v github.com/bep/s3deploy
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+    - bin
+
+test:
+  override
+    - yarn run build
+
+deployment:
+  s3up:
+    branch: develop
+    commands:
+      - s3deploy -source=dist/ -region=us-east-2 -bucket=jamiejzhang.com
