@@ -1,5 +1,3 @@
-# jz
-
 ## Project setup
 ```
 npm install
@@ -20,5 +18,7 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Deployment to AWS
+```
+aws s3 sync ./dist/ s3://bucketname
+```
