@@ -1,5 +1,5 @@
 <template>
-  <div id="MainPage">
+  <div id="Animation">
     <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
     <h1>
       <span
@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'MainPage',
+  name: 'Animation',
 }
 
 var TxtRotate = function(el, toRotate, period) {
