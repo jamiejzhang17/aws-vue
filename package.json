@@ -11,6 +11,7 @@
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-headful": "^2.1.0",
+    "vue-router": "^3.1.6",
     "vuetify": "^2.2.11"
   },
   "devDependencies": {

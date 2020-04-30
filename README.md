@@ -20,5 +20,5 @@ npm run lint
 
 ## Deployment to AWS
 ```
-aws s3 sync ./dist/ s3://bucketname
+aws s3 sync ./dist/ s3://jamiejzhang.com
 ```
