@@ -69,7 +69,7 @@ body{
 /* Animation */
 .typewriter{
   animation: typewriter 6s steps(44) 1s 1 normal both,
-             blinkTextCursor 600ms steps(44) infinite normal;
+             blinkTextCursor 1000ms steps(44) infinite normal;
 }
 @keyframes typewriter{
   from{width: 0;}
